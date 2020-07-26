@@ -1,17 +1,17 @@
 #!/bin/bash -x
 set -e
 
-KMS_STUN_IP_AUX="stun.l.google.com"
-KMS_STUN_PORT_AUX="19302"
+#KMS_STUN_IP_AUX="stun.l.google.com"
+#KMS_STUN_PORT_AUX="19302"
 
-if [ -n "$KMS_STUN_IP" -a -n "$KMS_STUN_PORT" ]; then
-    KMS_STUN_IP_AUX="${KMS_STUN_IP}"
-    KMS_STUN_PORT_AUX="${KMS_STUN_PORT}"
-fi
+#if [ -n "$KMS_STUN_IP" -a -n "$KMS_STUN_PORT" ]; then
+#    KMS_STUN_IP_AUX="${KMS_STUN_IP}"
+#    KMS_STUN_PORT_AUX="${KMS_STUN_PORT}"
+#fi
 
 # Generate WebRtcEndpoint configuration
-echo "stunServerAddress=$KMS_STUN_IP_AUX" > /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
-echo "stunServerPort=$KMS_STUN_PORT_AUX" >> /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+#echo "stunServerAddress=$KMS_STUN_IP_AUX" > /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+#echo "stunServerPort=$KMS_STUN_PORT_AUX" >> /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
 if [ -n "$KMS_TURN_URL" ]; then
     echo "turnURL=$KMS_TURN_URL" >> /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
 fi
